@@ -498,9 +498,6 @@ export type SystemFileManagerIntegration = Readonly<{
   directMountDir: string
   driverStatus: DriverStatus
   preferredMountDirs: Array<string>
-  // This only controls if system-file-manager-integration-banner is shown in
-  // Folders view. The banner always shows in Settings/Files screen.
-  showingBanner: boolean
 }>
 
 export enum KbfsDaemonRpcStatus {
@@ -553,7 +550,10 @@ export type SoftErrors = Readonly<{
 
 export type Settings = Readonly<{
   spaceAvailableNotificationThreshold: number
+  macOSFuseExtAcceptedClosedSource: boolean
+  sfmiBannerDismissed: boolean
   isLoading: boolean
+  loaded: boolean
 }>
 
 export type PathInfo = Readonly<{
